@@ -1,6 +1,7 @@
 package com.mabaya.campaigner.services.campaign;
 
 import com.mabaya.campaigner.model.Campaign;
+import com.mabaya.campaigner.model.CampaignStatus;
 import com.mabaya.campaigner.persist.DataStructures;
 import com.mabaya.campaigner.services.GeneralMapService;
 import org.springframework.stereotype.Service;
@@ -24,6 +25,7 @@ public class CampaignMapService extends GeneralMapService<Campaign, Integer> imp
 
     @Override
     public Campaign save(Campaign campaign) {
+        campaign.setCampaignStatus(CampaignStatus.ACTIVE);
         Campaign savedCampaign = super.save(campaign, dataStructures.campaignMap);
 
         Integer sellerId = campaign.getSellerId();

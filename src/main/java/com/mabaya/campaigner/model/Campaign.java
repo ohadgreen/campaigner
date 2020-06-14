@@ -5,7 +5,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@Builder
 @NoArgsConstructor
 public class Campaign extends BaseEntity{
     private String name;
@@ -23,9 +22,8 @@ public class Campaign extends BaseEntity{
     }
 
     @Builder
-    public Campaign(String name, CampaignStatus campaignStatus, Integer sellerId, double bid) {
+    public Campaign(String name, Integer sellerId, double bid) {
         this.name = name;
-        this.campaignStatus = campaignStatus;
         this.sellerId = sellerId;
         this.bid = bid;
     }

@@ -40,7 +40,7 @@ public class InitDataLoad implements CommandLineRunner {
     }
 
     private void loadCampaign() {
-        Campaign campaign1 = Campaign.builder().name("Paneco 1").campaignStatus(CampaignStatus.ACTIVE).sellerId(1).bid(1000.0).build();
+        Campaign campaign1 = Campaign.builder().name("Paneco 1").sellerId(1).bid(1000.0).build();
         campaignService.save(campaign1);
     }
 
