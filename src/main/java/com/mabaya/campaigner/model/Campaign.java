@@ -7,13 +7,19 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Builder
-@AllArgsConstructor
 @NoArgsConstructor
-public class Campaign {
-    private Integer id;
+public class Campaign extends BaseEntity{
     private String name;
     private CampaignStatus campaignStatus;
     private Integer sellerId;
     private double bid;
 
+    @Builder
+    public Campaign(Integer id, String name, CampaignStatus campaignStatus, Integer sellerId, double bid) {
+        super(id);
+        this.name = name;
+        this.campaignStatus = campaignStatus;
+        this.sellerId = sellerId;
+        this.bid = bid;
+    }
 }

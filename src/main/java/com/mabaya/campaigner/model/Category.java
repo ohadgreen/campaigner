@@ -6,8 +6,12 @@ import lombok.Data;
 
 @Data
 @Builder
-@AllArgsConstructor
-public class Category {
-    private Integer id;
+public class Category extends BaseEntity{
     private String title;
+
+    @Builder
+    public Category(Integer id, String title) {
+        super(id);
+        this.title = title;
+    }
 }
