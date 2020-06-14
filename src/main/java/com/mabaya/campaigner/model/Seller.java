@@ -20,4 +20,10 @@ public class Seller extends BaseEntity {
         this.name = name;
         this.products = products;
     }
+
+    @Builder
+    public Seller(String name, Set<Product> products) {
+        this.name = name;
+        this.products = products;
+    }
 }

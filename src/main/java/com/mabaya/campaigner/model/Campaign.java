@@ -1,6 +1,5 @@
 package com.mabaya.campaigner.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,6 +16,14 @@ public class Campaign extends BaseEntity{
     @Builder
     public Campaign(Integer id, String name, CampaignStatus campaignStatus, Integer sellerId, double bid) {
         super(id);
+        this.name = name;
+        this.campaignStatus = campaignStatus;
+        this.sellerId = sellerId;
+        this.bid = bid;
+    }
+
+    @Builder
+    public Campaign(String name, CampaignStatus campaignStatus, Integer sellerId, double bid) {
         this.name = name;
         this.campaignStatus = campaignStatus;
         this.sellerId = sellerId;
