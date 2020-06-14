@@ -8,12 +8,12 @@ public abstract class GeneralMapService<T extends BaseEntity, ID extends Integer
 
     private Map<Integer, Object> map;
 
-    T findById(ID id, Map map) {
+    protected T findById(ID id, Map map) {
         this.map = map;
         return (T) map.get(id);
     }
 
-    T save(T object, Map map) {
+    protected T save(T object, Map map) {
         this.map = map;
         if(object != null) {
             if(object.getId() == null){
