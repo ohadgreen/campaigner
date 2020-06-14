@@ -7,8 +7,8 @@ import java.util.Set;
 
 public interface ProductService {
 
-    Product findById(Integer id, Map<Integer, Product> productMap);
+    Product findById(Integer id);
 
-    Product save(Product product, Map<Integer, Product> productMap, Map<Integer, Set<Integer>> categoryProductIndex, Map<Integer, Set<Integer>> sellerProductIndex);
+    Product save(Product product);
 
 }

@@ -7,7 +7,7 @@ import java.util.Set;
 
 public interface CampaignService {
 
-    Campaign findById(Integer id, Map<Integer, Campaign> campaignMap);
+    Campaign findById(Integer id);
 
-    Campaign save(Campaign campaign, Map<Integer, Campaign> campaignMap, Map<Integer, Set<Integer>> sellerProductIndex, Map<Integer, Set<Integer>> productCampaignIndex);
+    Campaign save(Campaign campaign);
 }
