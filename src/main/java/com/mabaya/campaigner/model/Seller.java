@@ -12,18 +12,15 @@ import java.util.Set;
 @NoArgsConstructor
 public class Seller extends BaseEntity {
     private String name;
-    private Set<Product> products = new HashSet<>();
 
     @Builder
-    public Seller(Integer id, String name, Set<Product> products) {
+    public Seller(Integer id, String name) {
         super(id);
         this.name = name;
-        this.products = products;
     }
 
     @Builder
-    public Seller(String name, Set<Product> products) {
+    public Seller(String name) {
         this.name = name;
-        this.products = products;
     }
 }
