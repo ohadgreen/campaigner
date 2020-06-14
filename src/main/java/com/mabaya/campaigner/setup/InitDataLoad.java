@@ -1,9 +1,6 @@
 package com.mabaya.campaigner.setup;
 
-import com.mabaya.campaigner.model.Campaign;
-import com.mabaya.campaigner.model.Category;
-import com.mabaya.campaigner.model.Product;
-import com.mabaya.campaigner.model.Seller;
+import com.mabaya.campaigner.model.*;
 import com.mabaya.campaigner.services.campaign.CampaignService;
 import com.mabaya.campaigner.services.category.CategoryService;
 import com.mabaya.campaigner.services.product.ProductService;
@@ -27,6 +24,7 @@ public class InitDataLoad implements CommandLineRunner {
 
     public Map<Integer, Set<Integer>> categoryProductIndex = new HashMap<>();
     public Map<Integer, Set<Integer>> sellerProductIndex = new HashMap<>();
+    public Map<Integer, Set<Integer>> productCampaignIndex = new HashMap<>();
 
     private final CategoryService categoryService;
     private final ProductService productService;
@@ -46,8 +44,14 @@ public class InitDataLoad implements CommandLineRunner {
         loadCategories();
         loadSellers();
         loadProducts();
+        loadCampaign();
 
         log.info("loaded " + productMap.size() + " products");
+    }
+
+    private void loadCampaign() {
+        Campaign campaign1 = Campaign.builder().name("Paneco 1").campaignStatus(CampaignStatus.ACTIVE).sellerId(1).bid(1000.0).build();
+        campaignService.save(campaign1, campaignMap, sellerProductIndex, productCampaignIndex);
     }
 
     private void loadProducts() {
