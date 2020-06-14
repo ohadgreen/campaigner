@@ -23,6 +23,8 @@ public class CategoryMapService extends GeneralMapService<Category, Integer> imp
 
     @Override
     public Category save(Category category) {
-        return super.save(category, dataStructures.categoryMap);
+        Category savedCategory = super.save(category, dataStructures.categoryMap);
+        dataStructures.categoryNameIdMap.put(savedCategory.getTitle(), savedCategory.getId());
+        return savedCategory;
     }
 }

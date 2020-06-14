@@ -46,6 +46,8 @@ public class CampaignMapService extends GeneralMapService<Campaign, Integer> imp
             }
         }
 
+        dataStructures.campaignOrderedByBidMap.put(campaign.getBid(), campaign);
+
         return savedCampaign;
     }
 }
