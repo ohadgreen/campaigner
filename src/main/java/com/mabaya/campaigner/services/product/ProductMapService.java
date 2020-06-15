@@ -52,7 +52,6 @@ public class ProductMapService extends GeneralMapService<Product, Integer> imple
                 dataStructures.sellerProductIndex.put(sellerId, productSet);
             }
         }
-
         return savedProduct;
     }
 }
