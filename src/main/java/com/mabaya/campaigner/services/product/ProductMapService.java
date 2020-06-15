@@ -44,7 +44,7 @@ public class ProductMapService extends GeneralMapService<Product, Integer> imple
         Integer sellerId = product.getSellerId();
         if (sellerId != null) {
             if (dataStructures.sellerProductIndex.keySet().contains(sellerId)) { // add this product to existing seller
-                dataStructures.sellerProductIndex.get(categoryId).add(savedProduct.getId());
+                dataStructures.sellerProductIndex.get(sellerId).add(savedProduct.getId());
             }
             else { // create a new seller index
                 Set<Integer> productSet = new HashSet<>();

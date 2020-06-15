@@ -63,8 +63,6 @@ public class InitDataLoad implements CommandLineRunner {
         Product pringles = Product.builder().sellerId(3).categoryId(3).serialNumber(5001).title("Pringles").price(6.0).build();
 
         productService.save(jack_daniels);
-
-        productService.save(jack_daniels);
         productService.save(jim_beam);
         productService.save(wild_turkey);
         productService.save(glenlivet);
